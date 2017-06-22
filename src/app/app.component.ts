@@ -7,9 +7,11 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+profile;
   constructor(public auth: AuthService) {
     auth.handleAuthentication();
+    this.profile = this.auth.userProfile;
+    console.log(this.profile);
   }
 
 }

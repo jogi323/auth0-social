@@ -8,7 +8,12 @@
         routerLink="/">
           Home
       </button>
-
+      <button
+        class="btn btn-primary btn-margin"
+        *ngIf="auth.isAuthenticated()"
+        (click)="auth.getProfile()">
+         Profile
+      </button>
       <button
         class="btn btn-primary btn-margin"
         *ngIf="!auth.isAuthenticated()"
